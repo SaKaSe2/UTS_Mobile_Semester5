@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  final emailController = TextEditingController();
+  late final emailController = TextEditingController();
   final passwordController = TextEditingController();
   
   final obscurePassword = true.obs;
@@ -14,13 +14,6 @@ class LoginController extends GetxController {
 
   Future<void> login() async {
     if (emailController.text.isEmpty || passwordController.text.isEmpty) {
-      Get.snackbar(
-        'Error',
-        'Please fill in all fields',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
-      );
       return;
     }
 
@@ -35,28 +28,13 @@ class LoginController extends GetxController {
     Get.offAllNamed('/profile');
   }
 
-  Future<void> loginWithGoogle() async {
-    Get.snackbar(
-      'Info',
-      'Google login coming soon',
-      snackPosition: SnackPosition.BOTTOM,
-    );
+  void loginWithGoogle() {
   }
 
-  Future<void> loginWithFacebook() async {
-    Get.snackbar(
-      'Info',
-      'Facebook login coming soon',
-      snackPosition: SnackPosition.BOTTOM,
-    );
+  void loginWithFacebook() {
   }
 
   void forgotPassword() {
-    Get.snackbar(
-      'Info',
-      'Forgot password feature coming soon',
-      snackPosition: SnackPosition.BOTTOM,
-    );
   }
 
   void goToSignUp() {

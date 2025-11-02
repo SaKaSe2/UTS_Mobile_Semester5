@@ -64,15 +64,7 @@ class SignUpController extends GetxController {
     
     isLoading.value = false;
     
-    Get.snackbar(
-      'Success',
-      'Registration successful!',
-      snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: Colors.green,
-      colorText: Colors.white,
-    );
-    
-    // Navigate to profile
+    // Navigate ke profile
     Get.offAllNamed('/profile');
   }
 
